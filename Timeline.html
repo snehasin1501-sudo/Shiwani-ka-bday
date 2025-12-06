@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Friendship Timeline</title>
+
+<style>
+    body {
+        font-family: "Poppins", sans-serif;
+        background: #ffe9f2;
+        margin: 0;
+        padding: 0;
+        color: #4a4a4a;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 30px 0;
+        font-size: 2.2rem;
+        color: #d64582;
+        letter-spacing: 1px;
+        font-weight: 600;
+    }
+
+    .timeline {
+        position: relative;
+        margin: 40px auto;
+        padding: 20px 0;
+        width: 90%;
+        max-width: 650px;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: #ffb3cf;
+        transform: translateX(-50%);
+    }
+
+    .event {
+        position: relative;
+        width: 45%;
+        padding: 20px;
+        background: white;
+        border-radius: 12px;
+        margin: 35px 0;
+        box-shadow: 0px 6px 18px rgba(0,0,0,0.1);
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 0.8s ease-out;
+        border-left: 5px solid #ff9ec6;
+    }
+
+    .left {
+        left: 0;
+    }
+
+    .right {
+        left: 55%;
+    }
+
+    .event::before {
+        content: '';
+        position: absolute;
+        top: 22px;
+        width: 15px;
+        height: 15px;
+        background: #d64582;
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0px 0px 8px rgba(214,69,130,0.4);
+    }
+
+    .left::before {
+        right: -12px;
+    }
+
+    .right::before {
+        left: -12px;
+    }
+
+    .event h3 {
+        margin-top: 0;
+        color: #d64582;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .event p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 0;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+        margin-top: 12px;
+    }
+
+    /* Animation reveal */
+    .event.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Our Friendship Timeline</h1>
+
+<div class="timeline">
+
+    <div class="event left">
+        <h3>The meet</h3>
+        <p>mumma Deepa aunty ke tution me ek ladki padti hai bhot gusse wali lag rhi thi maine toh kuchh baat bhi nhi ki usse</p>
+    </div>
+
+    <div class="event right">
+        <h3>The intro</h3>
+        <p>Shreya: Hello I am shreya and this is shiwani(gusse wali ladki) meri best friend.Hum dono same school me padhte hai "S.S public"</p>
+    </div>
+
+    <div class="event left">
+        <h3>Shreya left</h3>
+        <p>shiwani: shreya ki jagah koi nhi le sakta wahi meri best friend hai baas.</p>
+        <p>Me: aab toh mai tujhe apni best friend bana ke rahungi, bet hai meri</p>
+    </div>
+
+    <div class="event right">
+        <h3>I join your tution and school</h3>
+        <p>Me:mumma deepa aunty ke yahan kyu tution lagwaya aapne?.</p>
+        <p>mumma: shiwani padhne me tez hai tum usse sikhogi isiliye usi ke school me aur usi ke saath tution me admission karwaya hai maine. </p>
+    </div>
+
+    <div class="event left">
+        <h3>We eventually become best friends</h3>
+        <p>one random day,.</p>
+        <p>Me: shiwani we are best friends right ?</p>
+        <p>shiwani: yes </p>
+    </div>
+
+   <div class="event right">
+        <h3>The park hangouts</h3>
+        <p>eventuallly as time passed on and now we claimed that one corner of park that held a lots of secrets emotions and stories aur teri yaadein bhi </p>
+    </div>
+    
+       <div class="event left">
+        <h3>I move out</h3>
+        <p>Mera ticket boards ke just baad ho gya and we could not hangout, really regret that but then eventually talking to you on video calls became the new normal but tere physically yahan na hone ka ehsaas toh abhi bhi hota hai...,  rula bhi deta h often tbh.</p>
+   </div>
+        
+           <div class="event right">
+        <h3>to be continued forever♡</h3>
+
+        
+    </div>
+    
+</div>
+
+<script>
+    const events = document.querySelectorAll('.event');
+
+    function reveal() {
+        for (let i = 0; i < events.length; i++) {
+            let windowHeight = window.innerHeight;
+            let elementTop = events[i].getBoundingClientRect().top;
+            if (elementTop < windowHeight - 50) {
+                events[i].classList.add("show");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
+    reveal();
+</script>
+
+</body>
+</html>
